@@ -8,6 +8,7 @@ import androidx.room.PrimaryKey
 
 @Entity(tableName = "table_book")
 data class Book(
+
     @ColumnInfo(name = "title")
     var title:String,
     @ColumnInfo(name = "autor")
@@ -16,9 +17,10 @@ data class Book(
     var ano:Int,
     @ColumnInfo(name = "score")
     var score:Float){
-        @PrimaryKey(autoGenerate = true)
-        var id = 0
-        @Ignore
-        var imagem: Bitmap? = null
+    @PrimaryKey(autoGenerate = true)
+    var id = 0
+    @Ignore
+    var imagem: Bitmap? = null
+
 }
 

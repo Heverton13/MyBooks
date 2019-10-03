@@ -5,13 +5,13 @@ import androidx.room.*
 @Dao
 interface BookDao {
     @Insert
-    fun inserir(carro: Book): Long
+    fun inserir(book: Book): Long
 
     @Delete
-    fun deletar(carro: Book): Int
+    fun deletar(book: Book): Int
 
     @Update
-    fun atualizar(carro: Book): Int
+    fun atualizar(book: Book): Int
 
     @Query("SELECT * FROM table_book")
     fun listAll(): Array<Book>
