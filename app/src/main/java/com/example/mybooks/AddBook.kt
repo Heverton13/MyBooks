@@ -26,10 +26,12 @@ class AddBook : AppCompatActivity() {
             db.bookDao().listAll().forEach { Log.i("APPBOOK", it.toString()) }
         }
 
-        btnCancel.setOnClickListener {
+        btnList.setOnClickListener {
             finish()
         }
 
     }
+
+
 
 }

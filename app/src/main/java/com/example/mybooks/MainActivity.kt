@@ -16,7 +16,9 @@ class MainActivity : AppCompatActivity() {
             startActivity(i)
         }
 
-        // Função em botão para encaminhar para tela de lista
-
+        btnList.setOnClickListener {
+            var i = Intent(this, ListBooks::class.java)
+            startActivity(i)
+        }
     }
 }
