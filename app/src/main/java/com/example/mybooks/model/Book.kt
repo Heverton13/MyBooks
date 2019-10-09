@@ -1,4 +1,4 @@
-package com.example.mybooks
+package com.example.mybooks.model
 
 import android.graphics.Bitmap
 import androidx.room.ColumnInfo

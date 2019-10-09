@@ -1,4 +1,4 @@
-package com.example.mybooks
+package com.example.mybooks.model
 
 import androidx.room.*
 

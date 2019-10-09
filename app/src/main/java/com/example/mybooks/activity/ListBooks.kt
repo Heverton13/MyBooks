@@ -1,10 +1,15 @@
-package com.example.mybooks
+package com.example.mybooks.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.ArrayAdapter
+import android.widget.Toast
 import androidx.room.Room
+import com.example.mybooks.database.AppDatabase
+import com.example.mybooks.model.Book
+import com.example.mybooks.R
 import kotlinx.android.synthetic.main.activity_list_books.*
 
 class ListBooks : AppCompatActivity() {
@@ -13,7 +18,7 @@ class ListBooks : AppCompatActivity() {
 
     var indice = 0
 
-    val db:AppDatabase by lazy {
+    val db: AppDatabase by lazy {
         Room.databaseBuilder(
             this,
             AppDatabase::class.java, "bookdb.sqlite")
@@ -21,11 +26,26 @@ class ListBooks : AppCompatActivity() {
             .build()
     }
 
+    private val TITLES = arrayListOf<String>()
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_list_books)
 
         fillBooks()
+        fillAdapter()
+
+        var booksToListAdapter = ArrayAdapter<String>(this, android.R.layout.simple_expandable_list_item_1, TITLES)
+        titleTextAdapter.setAdapter(booksToListAdapter)
+        titleTextAdapter.setOnItemClickListener { adapterView, view, i, l ->
+            var selected = adapterView.getItemAtPosition(i)
+            var indiceCurrent = db.bookDao().findByName("${selected.toString()}").id
+            indice = indiceCurrent-1
+            getBook()
+            Log.i("Teste do selecred","${selected.toString()}")
+            //Toast.makeText(this, "$selected $l", Toast.LENGTH_SHORT).show()
+        }
 
         getBook()
 
@@ -62,6 +82,7 @@ class ListBooks : AppCompatActivity() {
             checkIndex()
 
         }else{
+
             btnPrevious.visibility =  View.INVISIBLE
             btnNext.visibility = View.INVISIBLE
         }
@@ -77,6 +98,14 @@ class ListBooks : AppCompatActivity() {
         else if(indice - 1 < 0){
             btnPrevious.visibility = View.INVISIBLE
         }
+    }
+
+    fun fillAdapter(){
+
+        for(book in books){
+            TITLES.add(book.title)
+        }
+
     }
 
 }
