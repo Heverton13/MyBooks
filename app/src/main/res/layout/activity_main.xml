@@ -23,14 +23,29 @@
             android:id="@+id/btnRegister"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="20dp"
+            android:layout_margin="15dp"
             android:text="Cadastrar Novo" />
 
         <Button
             android:id="@+id/btnList"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="20dp"
+            android:layout_margin="15dp"
             android:text="Listar Livro" />
+
+        <Button
+            android:id="@+id/btnBusca"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:text="Buscar livro" />
+
+        <Button
+            android:id="@+id/btnListAdapter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:text="Lista de Títulos" />
+
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

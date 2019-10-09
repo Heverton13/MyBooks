@@ -9,8 +9,10 @@
         android:roundIcon="@mipmap/bookicon"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.ListBooks"></activity>
-        <activity android:name=".activity.AddBook"></activity>
+        <activity android:name=".activity.SearchBook"></activity>
+        <activity android:name=".activity.TelaDeListaBookAdaptar" />
+        <activity android:name=".activity.ListBooks" />
+        <activity android:name=".activity.AddBook" />
         <activity android:name=".activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

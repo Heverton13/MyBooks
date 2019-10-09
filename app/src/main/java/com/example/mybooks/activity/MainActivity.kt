@@ -21,5 +21,15 @@ class MainActivity : AppCompatActivity() {
             var i = Intent(this, ListBooks::class.java)
             startActivity(i)
         }
+
+        btnListAdapter.setOnClickListener {
+            var i = Intent(this, TelaDeListaBookAdaptar::class.java)
+            startActivity(i)
+        }
+
+        btnBusca.setOnClickListener {
+            var i = Intent(this, SearchBook::class.java)
+            startActivity(i)
+        }
     }
 }

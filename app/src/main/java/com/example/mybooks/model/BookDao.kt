@@ -14,7 +14,7 @@ interface BookDao {
     fun atualizar(book: Book): Int
 
     @Query("SELECT * FROM table_book")
-    fun listAll(): Array<Book>
+    fun listAll(): List<Book>
 
     @Query("SELECT * FROM TABLE_BOOK WHERE id = :id")
     fun findById(id: Long): Book
