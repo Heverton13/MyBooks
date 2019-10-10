@@ -7,7 +7,7 @@ import androidx.room.Room
 import com.example.mybooks.R
 import com.example.mybooks.database.AppDatabase
 import com.example.mybooks.model.Book
-import com.example.mybooks.model.BookAdapter
+import com.example.mybooks.adapter.BookAdapter
 import kotlinx.android.synthetic.main.activity_tela_de_lista_book_adaptar.*
 
 class TelaDeListaBookAdaptar : AppCompatActivity() {
