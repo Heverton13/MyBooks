@@ -3,6 +3,7 @@ package com.example.mybooks.activity
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.room.Room
 import com.example.mybooks.R
 import com.example.mybooks.database.AppDatabase
@@ -27,6 +28,7 @@ class TelaDeListaBookAdaptar : AppCompatActivity() {
         setContentView(R.layout.activity_tela_de_lista_book_adaptar)
 
         listaBooks = db.bookDao().listAll()
+
 
         listview.adapter = BookAdapter(this, listaBooks as List<Book>)
         listview.setOnItemClickListener{adapterView, view, i, l ->

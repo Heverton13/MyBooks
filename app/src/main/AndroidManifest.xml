@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/bookicon"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.SearchBook"></activity>
+        <activity android:name=".activity.ListBooksRecycle"></activity>
+        <activity android:name=".activity.SearchBook" />
         <activity android:name=".activity.TelaDeListaBookAdaptar" />
         <activity android:name=".activity.ListBooks" />
         <activity android:name=".activity.AddBook" />

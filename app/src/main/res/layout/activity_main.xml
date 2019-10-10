@@ -7,17 +7,19 @@
     tools:context=".activity.MainActivity">
 
     <LinearLayout
-        android:layout_width="297dp"
-        android:layout_height="518dp"
+        android:layout_width="290dp"
+        android:layout_height="425dp"
         android:layout_marginStart="50dp"
-        android:layout_marginTop="68dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="50dp"
         android:gravity="center"
         android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.476"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.483">
 
         <Button
             android:id="@+id/btnRegister"
@@ -46,6 +48,13 @@
             android:layout_height="wrap_content"
             android:layout_margin="15dp"
             android:text="Lista de Títulos" />
+
+        <Button
+            android:id="@+id/btnListRecycler"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:text="Lista com Recycler" />
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

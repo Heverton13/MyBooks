@@ -31,5 +31,10 @@ class MainActivity : AppCompatActivity() {
             var i = Intent(this, SearchBook::class.java)
             startActivity(i)
         }
+
+        btnListRecycler.setOnClickListener {
+            var i = Intent(this, ListBooksRecycle::class.java)
+            startActivity(i)
+        }
     }
 }
