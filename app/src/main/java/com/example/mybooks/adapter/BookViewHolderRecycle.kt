@@ -15,7 +15,7 @@ class BookViewHolderRecycle(v: View) : RecyclerView.ViewHolder(v) {
 
     init {
         Log.i("HOLDER", "Fazendo buscas por id...")
-        textViewTitle = v.findViewById(R.id.titleBook)
+        textViewTitle = v.findViewById(R.id.nameTitle)
         //Fazer depois - Em outro listar ||textViewAutor = v.findViewById(R.id.)
         //Fazer depois - Em outro listar ||textViewScore = v.findViewById(R.id.quantidade)
         //Fazer depois - Quando mudar o Model || val img: ImageViewimg = v.findViewById(R.id.img)

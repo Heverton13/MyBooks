@@ -26,11 +26,11 @@ class ListBooksRecycle : AppCompatActivity() {
         // ver isso https://www.androidpro.com.br/blog/design-layout/recyclerview-cardview/
 
         var adapter = BookAdapterRecycle(this, db.bookDao().listAll())
-        listView2.adapter = adapter
+        listrecycle.adapter = adapter
 
         val layout = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
 
-        listView2.layoutManager = layout
+        listrecycle.layoutManager = layout
 
     }
 }
