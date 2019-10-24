@@ -36,5 +36,10 @@ class MainActivity : AppCompatActivity() {
             var i = Intent(this, ListBooksRecycle::class.java)
             startActivity(i)
         }
+
+        btnPageView.setOnClickListener {
+            var i = Intent(this, PageViewBooks::class.java)
+            startActivity(i)
+        }
     }
 }
