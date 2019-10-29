@@ -34,6 +34,7 @@ class AddBook : AppCompatActivity() {
                     ratingBarBota.rating
                 )
             )
+            clearFields()
             Log.i("Add","Adicionou um livro")
             db.bookDao().listAll().forEach { Log.i("APPBOOK", it.toString()) }
         }
@@ -44,6 +45,12 @@ class AddBook : AppCompatActivity() {
 
     }
 
+    fun clearFields(){
+        textTitle.text.clear()
+        textAutor.text.clear()
+        textAno.text.clear()
+        ratingBarBota.rating
+    }
 
 
 }
