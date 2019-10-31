@@ -49,7 +49,7 @@ class AddBook : AppCompatActivity() {
         textTitle.text.clear()
         textAutor.text.clear()
         textAno.text.clear()
-        ratingBarBota.rating
+        ratingBarBota.rating = 0f
     }
 
 
