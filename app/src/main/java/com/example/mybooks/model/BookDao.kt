@@ -7,14 +7,20 @@ interface BookDao {
     @Insert
     fun inserir(book: Book): Long
 
+    @Insert
+    fun inserirAll(vararg l: Book): LongArray
+
     @Delete
     fun deletar(book: Book): Int
+
+    @Query("DELETE FROM table_book")
+    fun deleteAll(): Int
 
     @Update
     fun atualizar(book: Book): Int
 
     @Query("SELECT * FROM table_book")
-    fun listAll(): List<Book>
+    fun listAll(): MutableList<Book>
 
     @Query("SELECT * FROM TABLE_BOOK WHERE id = :id")
     fun findById(id: Long): Book
