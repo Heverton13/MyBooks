@@ -7,6 +7,9 @@ import android.view.LayoutInflater
 import com.example.mybooks.R
 import com.example.mybooks.model.Book
 
+
+// ESTE ADPATER É PARA UM RECYCLE SEM AÇÃO SOMENTE PARA LISTAR
+
 class BookAdapterRecycle(var c: Context, var books: List<Book>) : RecyclerView.Adapter<BookViewHolderRecycle>(){
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BookViewHolderRecycle {

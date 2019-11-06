@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/bookicon"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light">
-        <activity android:name=".activity.PageViewBooks"></activity>
+        <activity android:name=".activity.ListBookGrid"></activity>
+        <activity android:name=".activity.PageViewBooks" />
         <activity android:name=".activity.ListBooksRecycle" />
         <activity android:name=".activity.SearchBook" />
         <activity android:name=".activity.TelaDeListaBookAdaptar" />

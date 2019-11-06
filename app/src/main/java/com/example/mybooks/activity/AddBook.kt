@@ -5,6 +5,7 @@ package com.example.mybooks.activity
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.Toast
 import androidx.room.*
 import com.example.mybooks.database.AppDatabase
@@ -28,19 +29,25 @@ class AddBook : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_book)
 
+
         buttonSalvar.setOnClickListener {
-            db.bookDao().inserir(
-                Book(
-                    textTitle.text.toString(),
-                    textAutor.text.toString(),
-                    textAno.text.toString().toInt(),
-                    ratingBarBota.rating
+
+            if(validar()) {
+                db.bookDao().inserir(
+                    Book(
+                        textTitle.text.toString(),
+                        textAutor.text.toString(),
+                        textAno.text.toString().toInt(),
+                        ratingBarBota.rating
+                    )
                 )
-            )
-            clearFields()
-            Log.i("Add","Adicionou um livro")
-            db.bookDao().listAll().forEach { Log.i("APPBOOK", it.toString()) }
-            Toast.makeText(this, "Livro Salvo!",Toast.LENGTH_SHORT).show()
+                clearFields()
+                Log.i("Add", "Adicionou um livro")
+                db.bookDao().listAll().forEach { Log.i("APPBOOK", it.toString()) }
+                Toast.makeText(this, "Livro Salvo!", Toast.LENGTH_SHORT).show()
+            }else{
+                Toast.makeText(this, "Prencha todos os campos!", Toast.LENGTH_SHORT).show()
+            }
         }
 
         btnList.setOnClickListener {
@@ -54,6 +61,28 @@ class AddBook : AppCompatActivity() {
         textAutor.text.clear()
         textAno.text.clear()
         ratingBarBota.rating = 0f
+    }
+
+
+    fun validar(): Boolean {
+
+        var validate = true
+
+        if(textTitle.text.toString().equals("")){
+            validate = false
+        }
+
+        if(textAutor.text.toString().equals("")){
+            validate = false
+        }
+
+        if(textAno.text.toString().equals("")){
+            validate = false
+        }
+        if(ratingBarBota.rating < 0f){
+            validate = false
+        }
+        return validate
     }
 
     fun preparaBanco(){
@@ -93,5 +122,6 @@ class AddBook : AppCompatActivity() {
 
         flag = false
     }
+
 
 }

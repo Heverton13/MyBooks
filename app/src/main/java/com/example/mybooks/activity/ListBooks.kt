@@ -95,7 +95,7 @@ class ListBooks : AppCompatActivity() {
             btnNext.visibility = View.INVISIBLE
         }
 
-        else if(indice - 1 < 0){
+        if(indice == 0){
             btnPrevious.visibility = View.INVISIBLE
         }
     }

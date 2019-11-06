@@ -41,5 +41,10 @@ class MainActivity : AppCompatActivity() {
             var i = Intent(this, PageViewBooks::class.java)
             startActivity(i)
         }
+
+        btnListGrid.setOnClickListener {
+            var i = Intent(this, ListBookGrid::class.java)
+            startActivity(i)
+        }
     }
 }
