@@ -46,5 +46,12 @@ class MainActivity : AppCompatActivity() {
             var i = Intent(this, ListBookGrid::class.java)
             startActivity(i)
         }
+
+        btnListRtock.setOnClickListener {
+            var i = Intent(this, ListBookRecycleToque::class.java)
+            startActivity(i)
+        }
+
+
     }
 }
